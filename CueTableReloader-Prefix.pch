@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'CueTableReloader' target in the 'CueTableReloader' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif

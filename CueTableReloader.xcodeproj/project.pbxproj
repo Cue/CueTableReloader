@@ -1,0 +1,605 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		900BE43A16F6600300686BF9 /* libCueTableReloader.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 900BE42116F6600300686BF9 /* libCueTableReloader.a */; };
+		90BD5234177E471A00B10239 /* CueTableReloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BD5232177E471A00B10239 /* CueTableReloader.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		900BE43816F6600300686BF9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 900BE41916F6600300686BF9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 900BE42016F6600300686BF9;
+			remoteInfo = CueTableReloader;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		900BE41F16F6600300686BF9 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		9003945F16FF9BCE00B4461E /* Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Base.xcconfig; path = ../CueCore/Config/Base.xcconfig; sourceTree = SOURCE_ROOT; };
+		9003946016FF9BCE00B4461E /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Debug.xcconfig; path = ../CueCore/Config/Debug.xcconfig; sourceTree = SOURCE_ROOT; };
+		9003946116FF9BCE00B4461E /* Profiling.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Profiling.xcconfig; path = ../CueCore/Config/Profiling.xcconfig; sourceTree = SOURCE_ROOT; };
+		9003946216FF9BCE00B4461E /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Release.xcconfig; path = ../CueCore/Config/Release.xcconfig; sourceTree = SOURCE_ROOT; };
+		9003946316FF9BCE00B4461E /* Testflight.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Testflight.xcconfig; path = ../CueCore/Config/Testflight.xcconfig; sourceTree = SOURCE_ROOT; };
+		9003946416FF9BCE00B4461E /* Testflight Staging.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "Testflight Staging.xcconfig"; path = "../CueCore/Config/Testflight Staging.xcconfig"; sourceTree = SOURCE_ROOT; };
+		9003946516FF9BCE00B4461E /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Production.xcconfig; path = ../CueCore/Config/Production.xcconfig; sourceTree = SOURCE_ROOT; };
+		900BE42116F6600300686BF9 /* libCueTableReloader.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCueTableReloader.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		900BE43216F6600300686BF9 /* CueTableReloaderTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CueTableReloaderTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		900BE43D16F6600300686BF9 /* CueTableReloaderTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CueTableReloaderTests-Info.plist"; sourceTree = "<group>"; };
+		9085D4391731C786005165D4 /* CueTableReloader-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CueTableReloader-Prefix.pch"; sourceTree = SOURCE_ROOT; };
+		90BD5232177E471A00B10239 /* CueTableReloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CueTableReloader.m; sourceTree = "<group>"; };
+		90BD5233177E471A00B10239 /* CueTableReloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CueTableReloader.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		900BE41E16F6600300686BF9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		900BE42E16F6600300686BF9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				900BE43A16F6600300686BF9 /* libCueTableReloader.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9003946616FF9BCE00B4461E /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				9003945F16FF9BCE00B4461E /* Base.xcconfig */,
+				9003946016FF9BCE00B4461E /* Debug.xcconfig */,
+				9003946116FF9BCE00B4461E /* Profiling.xcconfig */,
+				9003946216FF9BCE00B4461E /* Release.xcconfig */,
+				9003946316FF9BCE00B4461E /* Testflight.xcconfig */,
+				9003946416FF9BCE00B4461E /* Testflight Staging.xcconfig */,
+				9003946516FF9BCE00B4461E /* Production.xcconfig */,
+			);
+			name = Config;
+			path = ../CueCore;
+			sourceTree = SOURCE_ROOT;
+		};
+		900BE41816F6600300686BF9 = {
+			isa = PBXGroup;
+			children = (
+				9003946616FF9BCE00B4461E /* Config */,
+				900BE42616F6600300686BF9 /* Classes */,
+				900BE43B16F6600300686BF9 /* CueTableReloaderTests */,
+				900BE42316F6600300686BF9 /* Frameworks */,
+				900BE42216F6600300686BF9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		900BE42216F6600300686BF9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				900BE42116F6600300686BF9 /* libCueTableReloader.a */,
+				900BE43216F6600300686BF9 /* CueTableReloaderTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		900BE42316F6600300686BF9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		900BE42616F6600300686BF9 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				90BD5232177E471A00B10239 /* CueTableReloader.m */,
+				90BD5233177E471A00B10239 /* CueTableReloader.h */,
+				900BE42716F6600300686BF9 /* Supporting Files */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		900BE42716F6600300686BF9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9085D4391731C786005165D4 /* CueTableReloader-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		900BE43B16F6600300686BF9 /* CueTableReloaderTests */ = {
+			isa = PBXGroup;
+			children = (
+				9096137A16F6A07100C0FDEC /* Dependencies */,
+				9096112516F69E8C00C0FDEC /* Tests */,
+				900BE43C16F6600300686BF9 /* Supporting Files */,
+			);
+			path = CueTableReloaderTests;
+			sourceTree = "<group>";
+		};
+		900BE43C16F6600300686BF9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				900BE43D16F6600300686BF9 /* CueTableReloaderTests-Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9096112516F69E8C00C0FDEC /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		9096137A16F6A07100C0FDEC /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		900BE42016F6600300686BF9 /* CueTableReloader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 900BE44616F6600300686BF9 /* Build configuration list for PBXNativeTarget "CueTableReloader" */;
+			buildPhases = (
+				900BE41D16F6600300686BF9 /* Sources */,
+				900BE41E16F6600300686BF9 /* Frameworks */,
+				900BE41F16F6600300686BF9 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CueTableReloader;
+			productName = CueTableReloader;
+			productReference = 900BE42116F6600300686BF9 /* libCueTableReloader.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		900BE43116F6600300686BF9 /* CueTableReloaderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 900BE44916F6600300686BF9 /* Build configuration list for PBXNativeTarget "CueTableReloaderTests" */;
+			buildPhases = (
+				900BE42D16F6600300686BF9 /* Sources */,
+				900BE42E16F6600300686BF9 /* Frameworks */,
+				900BE42F16F6600300686BF9 /* Resources */,
+				900BE43016F6600300686BF9 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				900BE43916F6600300686BF9 /* PBXTargetDependency */,
+			);
+			name = CueTableReloaderTests;
+			productName = CueTableReloaderTests;
+			productReference = 900BE43216F6600300686BF9 /* CueTableReloaderTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		900BE41916F6600300686BF9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = Cue;
+			};
+			buildConfigurationList = 900BE41C16F6600300686BF9 /* Build configuration list for PBXProject "CueTableReloader" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				English,
+			);
+			mainGroup = 900BE41816F6600300686BF9;
+			productRefGroup = 900BE42216F6600300686BF9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				900BE42016F6600300686BF9 /* CueTableReloader */,
+				900BE43116F6600300686BF9 /* CueTableReloaderTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		900BE42F16F6600300686BF9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		900BE43016F6600300686BF9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		900BE41D16F6600300686BF9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90BD5234177E471A00B10239 /* CueTableReloader.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		900BE42D16F6600300686BF9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		900BE43916F6600300686BF9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 900BE42016F6600300686BF9 /* CueTableReloader */;
+			targetProxy = 900BE43816F6600300686BF9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		9003944F16FF9BB000B4461E /* Profiling */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9003946116FF9BCE00B4461E /* Profiling.xcconfig */;
+			buildSettings = {
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+			};
+			name = Profiling;
+		};
+		9003945016FF9BB000B4461E /* Profiling */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/CueTableReloader.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CueTableReloader-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Profiling;
+		};
+		9003945116FF9BB000B4461E /* Profiling */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CueTableReloader-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"UNIT_TESTS=1",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/../CueCore/**",
+					"$(SRCROOT)/../../fmdb/src",
+					"$(SRCROOT)/../../RegexKitLite",
+					"$(SRCROOT)/../../CocoaHTTPServer/**",
+					"$(SRCROOT)/../CueTest/**",
+				);
+				INFOPLIST_FILE = "CueTableReloaderTests/CueTableReloaderTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SDKROOT)/usr/lib/system\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Profiling;
+		};
+		9003945916FF9BBA00B4461E /* Testflight Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9003946416FF9BCE00B4461E /* Testflight Staging.xcconfig */;
+			buildSettings = {
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+			};
+			name = "Testflight Staging";
+		};
+		9003945A16FF9BBA00B4461E /* Testflight Staging */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/CueTableReloader.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CueTableReloader-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = "Testflight Staging";
+		};
+		9003945B16FF9BBA00B4461E /* Testflight Staging */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CueTableReloader-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"UNIT_TESTS=1",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/../CueCore/**",
+					"$(SRCROOT)/../../fmdb/src",
+					"$(SRCROOT)/../../RegexKitLite",
+					"$(SRCROOT)/../../CocoaHTTPServer/**",
+					"$(SRCROOT)/../CueTest/**",
+				);
+				INFOPLIST_FILE = "CueTableReloaderTests/CueTableReloaderTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SDKROOT)/usr/lib/system\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = "Testflight Staging";
+		};
+		9003945C16FF9BBF00B4461E /* Production */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9003946516FF9BCE00B4461E /* Production.xcconfig */;
+			buildSettings = {
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+			};
+			name = Production;
+		};
+		9003945D16FF9BBF00B4461E /* Production */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/CueTableReloader.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CueTableReloader-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Production;
+		};
+		9003945E16FF9BBF00B4461E /* Production */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CueTableReloader-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"UNIT_TESTS=1",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/../CueCore/**",
+					"$(SRCROOT)/../../fmdb/src",
+					"$(SRCROOT)/../../RegexKitLite",
+					"$(SRCROOT)/../../CocoaHTTPServer/**",
+					"$(SRCROOT)/../CueTest/**",
+				);
+				INFOPLIST_FILE = "CueTableReloaderTests/CueTableReloaderTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SDKROOT)/usr/lib/system\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Production;
+		};
+		900BE44416F6600300686BF9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9003946016FF9BCE00B4461E /* Debug.xcconfig */;
+			buildSettings = {
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+			};
+			name = Debug;
+		};
+		900BE44516F6600300686BF9 /* Testflight */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9003946316FF9BCE00B4461E /* Testflight.xcconfig */;
+			buildSettings = {
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+			};
+			name = Testflight;
+		};
+		900BE44716F6600300686BF9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/CueTableReloader.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CueTableReloader-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		900BE44816F6600300686BF9 /* Testflight */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/CueTableReloader.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CueTableReloader-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Testflight;
+		};
+		900BE44A16F6600300686BF9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CueTableReloader-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"UNIT_TESTS=1",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/../CueCore/**",
+					"$(SRCROOT)/../../fmdb/src",
+					"$(SRCROOT)/../../RegexKitLite",
+					"$(SRCROOT)/../../CocoaHTTPServer/**",
+					"$(SRCROOT)/../CueTest/**",
+				);
+				INFOPLIST_FILE = "CueTableReloaderTests/CueTableReloaderTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SDKROOT)/usr/lib/system\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		900BE44B16F6600300686BF9 /* Testflight */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CueTableReloader-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"UNIT_TESTS=1",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/../CueCore/**",
+					"$(SRCROOT)/../../fmdb/src",
+					"$(SRCROOT)/../../RegexKitLite",
+					"$(SRCROOT)/../../CocoaHTTPServer/**",
+					"$(SRCROOT)/../CueTest/**",
+				);
+				INFOPLIST_FILE = "CueTableReloaderTests/CueTableReloaderTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SDKROOT)/usr/lib/system\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Testflight;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		900BE41C16F6600300686BF9 /* Build configuration list for PBXProject "CueTableReloader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				900BE44416F6600300686BF9 /* Debug */,
+				9003944F16FF9BB000B4461E /* Profiling */,
+				900BE44516F6600300686BF9 /* Testflight */,
+				9003945916FF9BBA00B4461E /* Testflight Staging */,
+				9003945C16FF9BBF00B4461E /* Production */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		900BE44616F6600300686BF9 /* Build configuration list for PBXNativeTarget "CueTableReloader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				900BE44716F6600300686BF9 /* Debug */,
+				9003945016FF9BB000B4461E /* Profiling */,
+				900BE44816F6600300686BF9 /* Testflight */,
+				9003945A16FF9BBA00B4461E /* Testflight Staging */,
+				9003945D16FF9BBF00B4461E /* Production */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		900BE44916F6600300686BF9 /* Build configuration list for PBXNativeTarget "CueTableReloaderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				900BE44A16F6600300686BF9 /* Debug */,
+				9003945116FF9BB000B4461E /* Profiling */,
+				900BE44B16F6600300686BF9 /* Testflight */,
+				9003945B16FF9BBA00B4461E /* Testflight Staging */,
+				9003945E16FF9BBF00B4461E /* Production */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 900BE41916F6600300686BF9 /* Project object */;
+}
