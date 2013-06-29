@@ -17,10 +17,6 @@
 #import "TableDemoViewController.h"
 #import "CueTableReloader.h"
 
-@interface UIColor (TableTesting)<CueTableItem>
-
-@end
-
 @implementation UIColor (TableTesting)
 
 + (UIColor *)randomColor;
@@ -32,31 +28,53 @@
     return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
 }
 
-- (uint32_t)rgba;
+- (NSObject<NSCopying> *)tableItemKey;
 {
-    static const int red = 0;
-    static const int green = 1;
-    static const int blue = 2;
-    static const int alpha = 3;
-    const CGFloat *components = CGColorGetComponents(self.CGColor);
-    
-    uint32_t r = (uint32_t)(components[red] * 255);
-    uint32_t g = (uint32_t)(components[green] * 255);
-    uint32_t b = (uint32_t)(components[blue] * 255);
-    uint32_t a = (uint32_t)(components[alpha] * 255);
-    
-    uint32_t retval = 0;
-    retval |= (r << 24);
-    retval |= (g << 16);
-    retval |= (b << 8);
-    retval |= (a << 0);
-    
-    return retval;
+    return self;
+}
+
+@end
+
+/**
+ * Container that specifies a color and height
+ */
+@interface TestObject : NSObject <CueTableItem>
+
+/**
+ * Color
+ */
+@property (readonly) UIColor *color;
+
+/**
+ * Height
+ */
+@property (readonly) CGFloat height;
+
+@end
+
+static const NSUInteger kMinHeight = 10;
+static const NSUInteger kMaxHeight = 80;
+
+@implementation TestObject
+
+- (id)init;
+{
+    return [self initWithColor:[UIColor randomColor] height:(arc4random() % (kMaxHeight - kMinHeight)) + kMinHeight];
+}
+
+- (id)initWithColor:(UIColor *)color height:(CGFloat)height;
+{
+    self = [super init];
+    if (self) {
+        _color = color;
+        _height = height;
+    }
+    return self;
 }
 
 - (NSObject<NSCopying> *)tableItemKey;
 {
-    return @(self.rgba);
+    return [NSString stringWithFormat:@"%@_%f", _color, _height];
 }
 
 @end
@@ -93,7 +111,7 @@ static const int kNumRows = 5; // per section
     for (int i = 0; i < kNumSections; ++i) {
         NSMutableArray *section = [@[] mutableCopy];
         for (int j = 0; j < kNumRows; ++j) {
-            [section addObject:[UIColor randomColor]];
+            [section addObject:[[TestObject alloc] init]];
         }
         [_objects addObject:section];
     }
@@ -108,7 +126,7 @@ static const int kNumRows = 5; // per section
         NSUInteger section = arc4random() % kNumSections;
         NSUInteger row = arc4random() % kNumRows;
         NSMutableArray *sectionArray = _objects[section];
-        [sectionArray replaceObjectAtIndex:row withObject:[UIColor randomColor]];
+        [sectionArray replaceObjectAtIndex:row withObject:[[TestObject alloc] init]];
     }
     [_reloader reloadData:_objects animated:YES];
     [self performSelector:@selector(_mutateSlightly) withObject:nil afterDelay:1.0f];
@@ -121,7 +139,7 @@ static const int kNumRows = 5; // per section
     if (!retval) {
         retval = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
-    retval.contentView.backgroundColor = _objects[indexPath.section][indexPath.row];
+    retval.contentView.backgroundColor = [_objects[indexPath.section][indexPath.row] color];
     return retval;
 }
 
@@ -138,6 +156,11 @@ static const int kNumRows = 5; // per section
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section;
 {
     return [NSString stringWithFormat:@"%d", section];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
+{
+    return [_objects[indexPath.section][indexPath.row] height];
 }
 
 @end
