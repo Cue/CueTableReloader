@@ -16,71 +16,7 @@
 
 #import "TableDemoViewController.h"
 #import "CueTableReloader.h"
-
-@implementation UIColor (TableTesting)
-
-+ (UIColor *)randomColor;
-{
-    float red = (float)rand() / (float)INT32_MAX;
-    float green = (float)rand() / (float)INT32_MAX;
-    float blue = (float)rand() / (float)INT32_MAX;
-    float alpha = 1.0f;
-    return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
-}
-
-- (NSObject<NSCopying> *)tableItemKey;
-{
-    return self;
-}
-
-@end
-
-/**
- * Container that specifies a color and height
- */
-@interface TestObject : NSObject <CueTableItem>
-
-/**
- * Color
- */
-@property (readonly) UIColor *color;
-
-/**
- * Height
- */
-@property (readonly) CGFloat height;
-
-@end
-
-static const NSUInteger kMinHeight = 10;
-static const NSUInteger kMaxHeight = 80;
-
-@implementation TestObject
-
-- (id)init;
-{
-    return [self initWithColor:[UIColor randomColor] height:(arc4random() % (kMaxHeight - kMinHeight)) + kMinHeight];
-}
-
-- (id)initWithColor:(UIColor *)color height:(CGFloat)height;
-{
-    self = [super init];
-    if (self) {
-        _color = color;
-        _height = height;
-    }
-    return self;
-}
-
-- (NSObject<NSCopying> *)tableItemKey;
-{
-    return [NSString stringWithFormat:@"%@_%f", _color, _height];
-}
-
-@end
-
-static const int kNumSections = 3;
-static const int kNumRows = 5; // per section
+#import "TestObject.h"
 
 @implementation TableDemoViewController {
     NSMutableArray *_objects;
@@ -91,45 +27,50 @@ static const int kNumRows = 5; // per section
 {
     [super viewDidLoad];
     _objects = [@[] mutableCopy];
-
     UITableView *tableView = [[UITableView alloc] init];
     tableView.delegate = self;
     tableView.dataSource = self;
     [self.view addSubview:tableView];
     tableView.frame = self.view.bounds;
     tableView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
-    _reloader = [[CueTableReloader alloc] initWithTableView:tableView];
-    
-    [self _populate];
-    
-    [self performSelector:@selector(_mutateSlightly) withObject:nil afterDelay:1.0f];
+    _reloader = [[CueTableReloader alloc] initWithTableView:tableView];    
+    [self populate:_objects];
+    [_reloader reloadData:_objects animated:YES];    
+    [self performSelector:@selector(_mutate) withObject:nil afterDelay:1.0f];
 }
 
-- (void)_populate;
+- (void)_mutate;
 {
-    [_objects removeAllObjects];
-    for (int i = 0; i < kNumSections; ++i) {
+    [self mutate:_objects];
+    [_reloader reloadData:_objects animated:YES];
+    [self performSelector:@selector(_mutate) withObject:nil afterDelay:1.0f];
+}
+
+- (void)populate:(NSMutableArray *)objects;
+{
+    [objects removeAllObjects];
+    for (int i = 0; i < [self sections]; ++i) {
         NSMutableArray *section = [@[] mutableCopy];
-        for (int j = 0; j < kNumRows; ++j) {
+        for (int j = 0; j < [self rows]; ++j) {
             [section addObject:[[TestObject alloc] init]];
         }
-        [_objects addObject:section];
+        [objects addObject:section];
     }
-    [_reloader reloadData:_objects animated:YES];
 }
 
-- (void)_mutateSlightly;
+- (void)mutate:(NSMutableArray *)objects;
 {
-    NSInteger numberToModify = 3;
-    int i = 0;
-    while (i++ < numberToModify) {
-        NSUInteger section = arc4random() % kNumSections;
-        NSUInteger row = arc4random() % kNumRows;
-        NSMutableArray *sectionArray = _objects[section];
-        [sectionArray replaceObjectAtIndex:row withObject:[[TestObject alloc] init]];
-    }
-    [_reloader reloadData:_objects animated:YES];
-    [self performSelector:@selector(_mutateSlightly) withObject:nil afterDelay:1.0f];
+    // Subclass
+}
+
+- (NSUInteger)sections;
+{
+    return 0; // Subclass
+}
+
+- (NSUInteger)rows;
+{
+    return 0; // Subclass
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;

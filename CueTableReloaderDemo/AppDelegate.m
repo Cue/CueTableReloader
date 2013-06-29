@@ -15,7 +15,8 @@
  */
 
 #import "AppDelegate.h"
-#import "TableDemoViewController.h"
+#import "TableRandomViewController.h"
+#import "TableReorderViewController.h"
 
 @implementation AppDelegate
 
@@ -26,7 +27,7 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
-    TableDemoViewController *vc = [[TableDemoViewController alloc] init];
+    TableReorderViewController *vc = [[TableReorderViewController alloc] init];
     self.window.rootViewController = vc;
     
     return YES;

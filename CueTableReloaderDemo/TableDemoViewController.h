@@ -15,11 +15,21 @@
  */
 
 #import <UIKit/UIKit.h>
+#import "TestObject.h"
+#import "CueTableReloader.h"
 
 /**
  * Quick and dirty visual test for the lib
  */
 @interface TableDemoViewController : UIViewController
 <UITableViewDataSource, UITableViewDelegate>
+
+- (void)populate:(NSMutableArray *)objects;
+
+- (void)mutate:(NSMutableArray *)objects;
+
+- (NSUInteger)sections;
+
+- (NSUInteger)rows;
 
 @end

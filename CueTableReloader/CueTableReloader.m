@@ -133,12 +133,15 @@
                         }
                     } else { // newEvents.contains should have caught this first.
                         [NSException raise:@"InvalidTableTransform" format:
-                         @"Something went wrong! Check that you have unique keys for your cells!"];
+                         @"Something went wrong! Check that you have unique keys for your cells, "
+                         "and that the ordering is constant!"];
                     }
                 }
                 [_tableView beginUpdates];
-                [_tableView deleteRowsAtIndexPaths:deletions withRowAnimation:UITableViewRowAnimationNone];
-                [_tableView insertRowsAtIndexPaths:insertions withRowAnimation:UITableViewRowAnimationFade];
+                [_tableView deleteRowsAtIndexPaths:deletions
+                                  withRowAnimation:UITableViewRowAnimationNone];
+                [_tableView insertRowsAtIndexPaths:insertions
+                                  withRowAnimation:UITableViewRowAnimationFade];
                 [_tableView endUpdates];
                 if (_reloadUnchangedRows) {
                     [_tableView reloadRowsAtIndexPaths:reloads withRowAnimation:UITableViewRowAnimationNone];
