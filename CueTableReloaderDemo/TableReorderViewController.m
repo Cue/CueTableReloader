@@ -22,8 +22,9 @@
 
 - (void)mutate:(NSMutableArray *)objects;
 {
-    id last = objects[0][[objects[0] count] - 2];
-    [objects[0] removeLastObject];
+    int removeFrom = [objects[0] count] - 2;
+    id last = objects[0][removeFrom];
+    [objects[0] removeObjectAtIndex:removeFrom];
     [objects[0] insertObject:last atIndex:0];
 }
 
