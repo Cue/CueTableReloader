@@ -20,5 +20,6 @@
  * Quick and dirty visual test for the lib
  */
 @interface TableDemoViewController : UIViewController
+<UITableViewDataSource, UITableViewDelegate>
 
 @end

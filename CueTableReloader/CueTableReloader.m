@@ -147,8 +147,12 @@
                 [_tableView reloadData];
             }
         }
-    } 
-    _oldSections = [sections copy];
+    }
+    NSMutableArray *deepCopy = [NSMutableArray arrayWithCapacity:sections.count];
+    for (NSArray *section in sections) {
+        [deepCopy addObject:[section copy]];
+    }
+    _oldSections = deepCopy;
 }
 
 @end
