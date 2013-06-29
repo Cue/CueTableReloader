@@ -59,10 +59,10 @@
         // It will not catch cross-section moves, and doesn't handle section count changes well.
         for (int i = 0; i < sections.count || i < _oldSections.count; ++i) {
             
-            NSArray *section, *oldSection;
+            NSArray *newSection, *oldSection;
             
             if (i < sections.count) {
-                section = sections[i];
+                newSection = sections[i];
             } else {
                 [_tableView deleteSections:[NSIndexSet indexSetWithIndex:i]
                           withRowAnimation:UITableViewRowAnimationNone];
@@ -80,31 +80,39 @@
                           withRowAnimation:UITableViewRowAnimationFade];
             }
             
-            NSMutableSet *keys = [NSMutableSet setWithCapacity:oldSection.count];
-            for (NSObject<CueTableItem> *item in section) {
-                [keys addObject:item.tableItemKey];
+            NSMutableDictionary *newIndexes = [NSMutableDictionary dictionaryWithCapacity:newSection.count];
+            for (int i = 0; i < oldSection.count; ++i) {
+                NSObject<CueTableItem> *item = newSection[i];
+                newIndexes[item.tableItemKey] = @(i);
             }
             
+            NSMutableDictionary *oldIndexes = [NSMutableDictionary dictionaryWithCapacity:oldSection.count];
+            for (int i = 0; i < oldSection.count; ++i) {
+                NSObject<CueTableItem> *item = oldSection[i];
+                oldIndexes[item.tableItemKey] = @(i);
+            }
+                        
             NSMutableArray *deletions = [@[] mutableCopy];
             NSMutableArray *insertions = [@[] mutableCopy];
             NSMutableArray *reloads = [@[] mutableCopy];
+            NSMutableArray *moves = [@[] mutableCopy];
             int oldIndex = 0;
             int newIndex = 0;
             int insertionIndex = 0;
             @try {
                 while (1) {
-                    if (oldIndex == oldSection.count && newIndex == section.count) {
+                    if (oldIndex == oldSection.count && newIndex == newSection.count) {
                         break;
                     }
                     
                     NSIndexPath *insertPath = [NSIndexPath indexPathForRow:insertionIndex inSection:i];
                     NSIndexPath *deletePath = [NSIndexPath indexPathForRow:oldIndex inSection:i];
                     NSIndexPath *reloadPath = [NSIndexPath indexPathForRow:insertionIndex inSection:i];
-                    
+                                        
                     NSObject<CueTableItem> *oldItem = nil;
                     if (oldIndex < oldSection.count) { // Delete
                         oldItem = oldSection[oldIndex];
-                        if (![keys containsObject:oldItem.tableItemKey]) {
+                        if (!newIndexes[oldItem.tableItemKey]) {
                             [deletions addObject:deletePath];
                             oldIndex++;
                             continue;
@@ -117,18 +125,29 @@
                     }
                     
                     NSObject<CueTableItem> *newItem = nil;
-                    if (newIndex < section.count) {
-                        newItem = section[newIndex];
+                    if (newIndex < newSection.count) {
+                        newItem = newSection[newIndex];
                         if ([oldItem isEqual:newItem]) { // Unchanged. Reload.
                             [reloads addObject:reloadPath];
                             oldIndex++;
                             newIndex++;
                             insertionIndex++;
                             continue;
-                        } else { // Insert
-                            [insertions addObject:insertPath];
-                            newIndex++;
-                            insertionIndex++;
+                        } else {
+                            NSNumber *mappedOldIndex = oldIndexes[oldItem.tableItemKey];
+                            if (mappedOldIndex) { // Move
+                                NSNumber *mappedNewIndex = newIndexes[oldItem.tableItemKey];
+                                NSInteger diff = mappedNewIndex.integerValue - mappedOldIndex.integerValue;
+                                NSIndexPath *from = [NSIndexPath indexPathForRow:oldIndex inSection:i];
+                                NSIndexPath *to = [NSIndexPath indexPathForRow:oldIndex+diff inSection:i];
+                                [moves addObject:@[ from, to ]];
+                                oldIndex++;
+                                newIndex++;
+                            } else { // Insert
+                                [insertions addObject:insertPath];
+                                newIndex++;
+                                insertionIndex++;
+                            }
                             continue;
                         }
                     } else { // newEvents.contains should have caught this first.
@@ -142,9 +161,13 @@
                                   withRowAnimation:UITableViewRowAnimationNone];
                 [_tableView insertRowsAtIndexPaths:insertions
                                   withRowAnimation:UITableViewRowAnimationFade];
+                for (NSArray *pair in moves) {
+                    [_tableView moveRowAtIndexPath:pair[0] toIndexPath:pair[1]];
+                }
                 [_tableView endUpdates];
                 if (_reloadUnchangedRows) {
-                    [_tableView reloadRowsAtIndexPaths:reloads withRowAnimation:UITableViewRowAnimationNone];
+                    [_tableView reloadRowsAtIndexPaths:reloads
+                                      withRowAnimation:UITableViewRowAnimationNone];
                 }
             } @catch (NSException *e) {
                 [_tableView reloadData];

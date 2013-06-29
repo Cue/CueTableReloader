@@ -70,7 +70,7 @@ static const NSUInteger kMaxHeight = 80;
 
 - (NSString *)description;
 {
-    return [NSString stringWithFormat:@"[%.0f] 0x%x", _height, _color.rgba];
+    return [NSString stringWithFormat:@"[%.0f] 0x%xff", _height, _color.rgba];
 }
 
 @end

@@ -17,12 +17,12 @@
 
 - (NSUInteger)rows;
 {
-    return 2;
+    return 3;
 }
 
 - (void)mutate:(NSMutableArray *)objects;
 {
-    id last = [objects[0] lastObject];
+    id last = objects[0][[objects[0] count] - 2];
     [objects[0] removeLastObject];
     [objects[0] insertObject:last atIndex:0];
 }
