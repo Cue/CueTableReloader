@@ -17,15 +17,17 @@
 
 - (NSUInteger)rows;
 {
-    return 3;
+    return 5;
 }
 
 - (void)mutate:(NSMutableArray *)objects;
 {
-    int removeFrom = [objects[0] count] - 2;
-    id last = objects[0][removeFrom];
-    [objects[0] removeObjectAtIndex:removeFrom];
-    [objects[0] insertObject:last atIndex:0];
+    int from = [objects[0] count] - 2;
+    int to = 1;
+    
+    id move = objects[0][from];
+    [objects[0] removeObjectAtIndex:from];
+    [objects[0] insertObject:move atIndex:to];
 }
 
 @end
