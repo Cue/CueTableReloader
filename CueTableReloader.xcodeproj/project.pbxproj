@@ -7,169 +7,218 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		900BE43A16F6600300686BF9 /* libCueTableReloader.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 900BE42116F6600300686BF9 /* libCueTableReloader.a */; };
-		90BD5234177E471A00B10239 /* CueTableReloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BD5232177E471A00B10239 /* CueTableReloader.m */; };
+		90BD5401177F71B900B10239 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90BD5400177F71B900B10239 /* Foundation.framework */; };
+		90BD5406177F71B900B10239 /* CueTableReloader.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 90BD5405177F71B900B10239 /* CueTableReloader.h */; };
+		90BD5408177F71B900B10239 /* CueTableReloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BD5407177F71B900B10239 /* CueTableReloader.m */; };
+		90BD5410177F71B900B10239 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90BD540F177F71B900B10239 /* SenTestingKit.framework */; };
+		90BD5412177F71B900B10239 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90BD5411177F71B900B10239 /* UIKit.framework */; };
+		90BD5413177F71B900B10239 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90BD5400177F71B900B10239 /* Foundation.framework */; };
+		90BD5416177F71B900B10239 /* libCueTableReloader.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90BD53FD177F71B900B10239 /* libCueTableReloader.a */; };
+		90BD541C177F71B900B10239 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 90BD541A177F71B900B10239 /* InfoPlist.strings */; };
+		90BD541F177F71B900B10239 /* CueTableReloaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BD541E177F71B900B10239 /* CueTableReloaderTests.m */; };
+		90BD5456177F728D00B10239 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90BD5411177F71B900B10239 /* UIKit.framework */; };
+		90BD5457177F728D00B10239 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90BD5400177F71B900B10239 /* Foundation.framework */; };
+		90BD5459177F728D00B10239 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90BD5458177F728D00B10239 /* CoreGraphics.framework */; };
+		90BD545F177F728D00B10239 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 90BD545D177F728D00B10239 /* InfoPlist.strings */; };
+		90BD5461177F728D00B10239 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BD5460177F728D00B10239 /* main.m */; };
+		90BD5465177F728E00B10239 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BD5464177F728D00B10239 /* AppDelegate.m */; };
+		90BD5467177F728E00B10239 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 90BD5466177F728E00B10239 /* Default.png */; };
+		90BD5469177F728E00B10239 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 90BD5468177F728E00B10239 /* Default@2x.png */; };
+		90BD546B177F728E00B10239 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 90BD546A177F728E00B10239 /* Default-568h@2x.png */; };
+		90BD546F177F72E800B10239 /* libCueTableReloader.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90BD53FD177F71B900B10239 /* libCueTableReloader.a */; };
+		90BD5472177F730300B10239 /* TableDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BD5471177F730300B10239 /* TableDemoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		900BE43816F6600300686BF9 /* PBXContainerItemProxy */ = {
+		90BD5414177F71B900B10239 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 900BE41916F6600300686BF9 /* Project object */;
+			containerPortal = 90BD53F5177F71B900B10239 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 900BE42016F6600300686BF9;
+			remoteGlobalIDString = 90BD53FC177F71B900B10239;
 			remoteInfo = CueTableReloader;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		900BE41F16F6600300686BF9 /* CopyFiles */ = {
+		90BD53FB177F71B900B10239 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "include/${PRODUCT_NAME}";
 			dstSubfolderSpec = 16;
 			files = (
+				90BD5406177F71B900B10239 /* CueTableReloader.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		9003945F16FF9BCE00B4461E /* Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Base.xcconfig; path = ../CueCore/Config/Base.xcconfig; sourceTree = SOURCE_ROOT; };
-		9003946016FF9BCE00B4461E /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Debug.xcconfig; path = ../CueCore/Config/Debug.xcconfig; sourceTree = SOURCE_ROOT; };
-		9003946116FF9BCE00B4461E /* Profiling.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Profiling.xcconfig; path = ../CueCore/Config/Profiling.xcconfig; sourceTree = SOURCE_ROOT; };
-		9003946216FF9BCE00B4461E /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Release.xcconfig; path = ../CueCore/Config/Release.xcconfig; sourceTree = SOURCE_ROOT; };
-		9003946316FF9BCE00B4461E /* Testflight.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Testflight.xcconfig; path = ../CueCore/Config/Testflight.xcconfig; sourceTree = SOURCE_ROOT; };
-		9003946416FF9BCE00B4461E /* Testflight Staging.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "Testflight Staging.xcconfig"; path = "../CueCore/Config/Testflight Staging.xcconfig"; sourceTree = SOURCE_ROOT; };
-		9003946516FF9BCE00B4461E /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Production.xcconfig; path = ../CueCore/Config/Production.xcconfig; sourceTree = SOURCE_ROOT; };
-		900BE42116F6600300686BF9 /* libCueTableReloader.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCueTableReloader.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		900BE43216F6600300686BF9 /* CueTableReloaderTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CueTableReloaderTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		900BE43D16F6600300686BF9 /* CueTableReloaderTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CueTableReloaderTests-Info.plist"; sourceTree = "<group>"; };
-		9085D4391731C786005165D4 /* CueTableReloader-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CueTableReloader-Prefix.pch"; sourceTree = SOURCE_ROOT; };
-		90BD5232177E471A00B10239 /* CueTableReloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CueTableReloader.m; sourceTree = "<group>"; };
-		90BD5233177E471A00B10239 /* CueTableReloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CueTableReloader.h; sourceTree = "<group>"; };
+		90BD53FD177F71B900B10239 /* libCueTableReloader.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCueTableReloader.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		90BD5400177F71B900B10239 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		90BD5404177F71B900B10239 /* CueTableReloader-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CueTableReloader-Prefix.pch"; sourceTree = "<group>"; };
+		90BD5405177F71B900B10239 /* CueTableReloader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CueTableReloader.h; sourceTree = "<group>"; };
+		90BD5407177F71B900B10239 /* CueTableReloader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CueTableReloader.m; sourceTree = "<group>"; };
+		90BD540E177F71B900B10239 /* CueTableReloaderTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CueTableReloaderTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		90BD540F177F71B900B10239 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		90BD5411177F71B900B10239 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		90BD5419177F71B900B10239 /* CueTableReloaderTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CueTableReloaderTests-Info.plist"; sourceTree = "<group>"; };
+		90BD541B177F71B900B10239 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		90BD541D177F71B900B10239 /* CueTableReloaderTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CueTableReloaderTests.h; sourceTree = "<group>"; };
+		90BD541E177F71B900B10239 /* CueTableReloaderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CueTableReloaderTests.m; sourceTree = "<group>"; };
+		90BD5455177F728D00B10239 /* CueTableReloaderDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CueTableReloaderDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		90BD5458177F728D00B10239 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		90BD545C177F728D00B10239 /* CueTableReloaderDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CueTableReloaderDemo-Info.plist"; sourceTree = "<group>"; };
+		90BD545E177F728D00B10239 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		90BD5460177F728D00B10239 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		90BD5462177F728D00B10239 /* CueTableReloaderDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CueTableReloaderDemo-Prefix.pch"; sourceTree = "<group>"; };
+		90BD5463177F728D00B10239 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		90BD5464177F728D00B10239 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		90BD5466177F728E00B10239 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		90BD5468177F728E00B10239 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		90BD546A177F728E00B10239 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		90BD5470177F730300B10239 /* TableDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableDemoViewController.h; sourceTree = "<group>"; };
+		90BD5471177F730300B10239 /* TableDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableDemoViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		900BE41E16F6600300686BF9 /* Frameworks */ = {
+		90BD53FA177F71B900B10239 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90BD5401177F71B900B10239 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		900BE42E16F6600300686BF9 /* Frameworks */ = {
+		90BD540A177F71B900B10239 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				900BE43A16F6600300686BF9 /* libCueTableReloader.a in Frameworks */,
+				90BD5410177F71B900B10239 /* SenTestingKit.framework in Frameworks */,
+				90BD5412177F71B900B10239 /* UIKit.framework in Frameworks */,
+				90BD5413177F71B900B10239 /* Foundation.framework in Frameworks */,
+				90BD5416177F71B900B10239 /* libCueTableReloader.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		90BD5452177F728D00B10239 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90BD546F177F72E800B10239 /* libCueTableReloader.a in Frameworks */,
+				90BD5456177F728D00B10239 /* UIKit.framework in Frameworks */,
+				90BD5457177F728D00B10239 /* Foundation.framework in Frameworks */,
+				90BD5459177F728D00B10239 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9003946616FF9BCE00B4461E /* Config */ = {
+		90BD53F4177F71B900B10239 = {
 			isa = PBXGroup;
 			children = (
-				9003945F16FF9BCE00B4461E /* Base.xcconfig */,
-				9003946016FF9BCE00B4461E /* Debug.xcconfig */,
-				9003946116FF9BCE00B4461E /* Profiling.xcconfig */,
-				9003946216FF9BCE00B4461E /* Release.xcconfig */,
-				9003946316FF9BCE00B4461E /* Testflight.xcconfig */,
-				9003946416FF9BCE00B4461E /* Testflight Staging.xcconfig */,
-				9003946516FF9BCE00B4461E /* Production.xcconfig */,
-			);
-			name = Config;
-			path = ../CueCore;
-			sourceTree = SOURCE_ROOT;
-		};
-		900BE41816F6600300686BF9 = {
-			isa = PBXGroup;
-			children = (
-				9003946616FF9BCE00B4461E /* Config */,
-				900BE42616F6600300686BF9 /* Classes */,
-				900BE43B16F6600300686BF9 /* CueTableReloaderTests */,
-				900BE42316F6600300686BF9 /* Frameworks */,
-				900BE42216F6600300686BF9 /* Products */,
+				90BD5402177F71B900B10239 /* CueTableReloader */,
+				90BD5417177F71B900B10239 /* CueTableReloaderTests */,
+				90BD545A177F728D00B10239 /* CueTableReloaderDemo */,
+				90BD53FF177F71B900B10239 /* Frameworks */,
+				90BD53FE177F71B900B10239 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		900BE42216F6600300686BF9 /* Products */ = {
+		90BD53FE177F71B900B10239 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				900BE42116F6600300686BF9 /* libCueTableReloader.a */,
-				900BE43216F6600300686BF9 /* CueTableReloaderTests.octest */,
+				90BD53FD177F71B900B10239 /* libCueTableReloader.a */,
+				90BD540E177F71B900B10239 /* CueTableReloaderTests.octest */,
+				90BD5455177F728D00B10239 /* CueTableReloaderDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		900BE42316F6600300686BF9 /* Frameworks */ = {
+		90BD53FF177F71B900B10239 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				90BD5400177F71B900B10239 /* Foundation.framework */,
+				90BD540F177F71B900B10239 /* SenTestingKit.framework */,
+				90BD5411177F71B900B10239 /* UIKit.framework */,
+				90BD5458177F728D00B10239 /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		900BE42616F6600300686BF9 /* Classes */ = {
+		90BD5402177F71B900B10239 /* CueTableReloader */ = {
 			isa = PBXGroup;
 			children = (
-				90BD5232177E471A00B10239 /* CueTableReloader.m */,
-				90BD5233177E471A00B10239 /* CueTableReloader.h */,
-				900BE42716F6600300686BF9 /* Supporting Files */,
+				90BD5405177F71B900B10239 /* CueTableReloader.h */,
+				90BD5407177F71B900B10239 /* CueTableReloader.m */,
+				90BD5403177F71B900B10239 /* Supporting Files */,
 			);
-			path = Classes;
+			path = CueTableReloader;
 			sourceTree = "<group>";
 		};
-		900BE42716F6600300686BF9 /* Supporting Files */ = {
+		90BD5403177F71B900B10239 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				9085D4391731C786005165D4 /* CueTableReloader-Prefix.pch */,
+				90BD5404177F71B900B10239 /* CueTableReloader-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		900BE43B16F6600300686BF9 /* CueTableReloaderTests */ = {
+		90BD5417177F71B900B10239 /* CueTableReloaderTests */ = {
 			isa = PBXGroup;
 			children = (
-				9096137A16F6A07100C0FDEC /* Dependencies */,
-				9096112516F69E8C00C0FDEC /* Tests */,
-				900BE43C16F6600300686BF9 /* Supporting Files */,
+				90BD541D177F71B900B10239 /* CueTableReloaderTests.h */,
+				90BD541E177F71B900B10239 /* CueTableReloaderTests.m */,
+				90BD5418177F71B900B10239 /* Supporting Files */,
 			);
 			path = CueTableReloaderTests;
 			sourceTree = "<group>";
 		};
-		900BE43C16F6600300686BF9 /* Supporting Files */ = {
+		90BD5418177F71B900B10239 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				900BE43D16F6600300686BF9 /* CueTableReloaderTests-Info.plist */,
+				90BD5419177F71B900B10239 /* CueTableReloaderTests-Info.plist */,
+				90BD541A177F71B900B10239 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		9096112516F69E8C00C0FDEC /* Tests */ = {
+		90BD545A177F728D00B10239 /* CueTableReloaderDemo */ = {
 			isa = PBXGroup;
 			children = (
+				90BD5470177F730300B10239 /* TableDemoViewController.h */,
+				90BD5471177F730300B10239 /* TableDemoViewController.m */,
+				90BD5463177F728D00B10239 /* AppDelegate.h */,
+				90BD5464177F728D00B10239 /* AppDelegate.m */,
+				90BD545B177F728D00B10239 /* Supporting Files */,
 			);
-			path = Tests;
+			path = CueTableReloaderDemo;
 			sourceTree = "<group>";
 		};
-		9096137A16F6A07100C0FDEC /* Dependencies */ = {
+		90BD545B177F728D00B10239 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				90BD545C177F728D00B10239 /* CueTableReloaderDemo-Info.plist */,
+				90BD545D177F728D00B10239 /* InfoPlist.strings */,
+				90BD5460177F728D00B10239 /* main.m */,
+				90BD5462177F728D00B10239 /* CueTableReloaderDemo-Prefix.pch */,
+				90BD5466177F728E00B10239 /* Default.png */,
+				90BD5468177F728E00B10239 /* Default@2x.png */,
+				90BD546A177F728E00B10239 /* Default-568h@2x.png */,
 			);
-			name = Dependencies;
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		900BE42016F6600300686BF9 /* CueTableReloader */ = {
+		90BD53FC177F71B900B10239 /* CueTableReloader */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 900BE44616F6600300686BF9 /* Build configuration list for PBXNativeTarget "CueTableReloader" */;
+			buildConfigurationList = 90BD5422177F71B900B10239 /* Build configuration list for PBXNativeTarget "CueTableReloader" */;
 			buildPhases = (
-				900BE41D16F6600300686BF9 /* Sources */,
-				900BE41E16F6600300686BF9 /* Frameworks */,
-				900BE41F16F6600300686BF9 /* CopyFiles */,
+				90BD53F9177F71B900B10239 /* Sources */,
+				90BD53FA177F71B900B10239 /* Frameworks */,
+				90BD53FB177F71B900B10239 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -177,68 +226,97 @@
 			);
 			name = CueTableReloader;
 			productName = CueTableReloader;
-			productReference = 900BE42116F6600300686BF9 /* libCueTableReloader.a */;
+			productReference = 90BD53FD177F71B900B10239 /* libCueTableReloader.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		900BE43116F6600300686BF9 /* CueTableReloaderTests */ = {
+		90BD540D177F71B900B10239 /* CueTableReloaderTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 900BE44916F6600300686BF9 /* Build configuration list for PBXNativeTarget "CueTableReloaderTests" */;
+			buildConfigurationList = 90BD5425177F71B900B10239 /* Build configuration list for PBXNativeTarget "CueTableReloaderTests" */;
 			buildPhases = (
-				900BE42D16F6600300686BF9 /* Sources */,
-				900BE42E16F6600300686BF9 /* Frameworks */,
-				900BE42F16F6600300686BF9 /* Resources */,
-				900BE43016F6600300686BF9 /* ShellScript */,
+				90BD5409177F71B900B10239 /* Sources */,
+				90BD540A177F71B900B10239 /* Frameworks */,
+				90BD540B177F71B900B10239 /* Resources */,
+				90BD540C177F71B900B10239 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				900BE43916F6600300686BF9 /* PBXTargetDependency */,
+				90BD5415177F71B900B10239 /* PBXTargetDependency */,
 			);
 			name = CueTableReloaderTests;
 			productName = CueTableReloaderTests;
-			productReference = 900BE43216F6600300686BF9 /* CueTableReloaderTests.octest */;
+			productReference = 90BD540E177F71B900B10239 /* CueTableReloaderTests.octest */;
 			productType = "com.apple.product-type.bundle";
+		};
+		90BD5454177F728D00B10239 /* CueTableReloaderDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 90BD546C177F728E00B10239 /* Build configuration list for PBXNativeTarget "CueTableReloaderDemo" */;
+			buildPhases = (
+				90BD5451177F728D00B10239 /* Sources */,
+				90BD5452177F728D00B10239 /* Frameworks */,
+				90BD5453177F728D00B10239 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CueTableReloaderDemo;
+			productName = CueTableReloaderDemo;
+			productReference = 90BD5455177F728D00B10239 /* CueTableReloaderDemo.app */;
+			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		900BE41916F6600300686BF9 /* Project object */ = {
+		90BD53F5177F71B900B10239 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = Cue;
 			};
-			buildConfigurationList = 900BE41C16F6600300686BF9 /* Build configuration list for PBXProject "CueTableReloader" */;
+			buildConfigurationList = 90BD53F8177F71B900B10239 /* Build configuration list for PBXProject "CueTableReloader" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				English,
 			);
-			mainGroup = 900BE41816F6600300686BF9;
-			productRefGroup = 900BE42216F6600300686BF9 /* Products */;
+			mainGroup = 90BD53F4177F71B900B10239;
+			productRefGroup = 90BD53FE177F71B900B10239 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				900BE42016F6600300686BF9 /* CueTableReloader */,
-				900BE43116F6600300686BF9 /* CueTableReloaderTests */,
+				90BD53FC177F71B900B10239 /* CueTableReloader */,
+				90BD540D177F71B900B10239 /* CueTableReloaderTests */,
+				90BD5454177F728D00B10239 /* CueTableReloaderDemo */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		900BE42F16F6600300686BF9 /* Resources */ = {
+		90BD540B177F71B900B10239 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90BD541C177F71B900B10239 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		90BD5453177F728D00B10239 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90BD545F177F728D00B10239 /* InfoPlist.strings in Resources */,
+				90BD5467177F728E00B10239 /* Default.png in Resources */,
+				90BD5469177F728E00B10239 /* Default@2x.png in Resources */,
+				90BD546B177F728E00B10239 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		900BE43016F6600300686BF9 /* ShellScript */ = {
+		90BD540C177F71B900B10239 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -254,258 +332,140 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		900BE41D16F6600300686BF9 /* Sources */ = {
+		90BD53F9177F71B900B10239 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90BD5234177E471A00B10239 /* CueTableReloader.m in Sources */,
+				90BD5408177F71B900B10239 /* CueTableReloader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		900BE42D16F6600300686BF9 /* Sources */ = {
+		90BD5409177F71B900B10239 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90BD541F177F71B900B10239 /* CueTableReloaderTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		90BD5451177F728D00B10239 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90BD5461177F728D00B10239 /* main.m in Sources */,
+				90BD5465177F728E00B10239 /* AppDelegate.m in Sources */,
+				90BD5472177F730300B10239 /* TableDemoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		900BE43916F6600300686BF9 /* PBXTargetDependency */ = {
+		90BD5415177F71B900B10239 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 900BE42016F6600300686BF9 /* CueTableReloader */;
-			targetProxy = 900BE43816F6600300686BF9 /* PBXContainerItemProxy */;
+			target = 90BD53FC177F71B900B10239 /* CueTableReloader */;
+			targetProxy = 90BD5414177F71B900B10239 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		90BD541A177F71B900B10239 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				90BD541B177F71B900B10239 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		90BD545D177F728D00B10239 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				90BD545E177F728D00B10239 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
-		9003944F16FF9BB000B4461E /* Profiling */ = {
+		90BD5420177F71B900B10239 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9003946116FF9BCE00B4461E /* Profiling.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				SDKROOT = iphoneos;
-			};
-			name = Profiling;
-		};
-		9003945016FF9BB000B4461E /* Profiling */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DSTROOT = /tmp/CueTableReloader.dst;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CueTableReloader-Prefix.pch";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-			};
-			name = Profiling;
-		};
-		9003945116FF9BB000B4461E /* Profiling */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CueTableReloader-Prefix.pch";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
 					"$(inherited)",
-					"UNIT_TESTS=1",
 				);
-				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../CueCore/**",
-					"$(SRCROOT)/../../fmdb/src",
-					"$(SRCROOT)/../../RegexKitLite",
-					"$(SRCROOT)/../../CocoaHTTPServer/**",
-					"$(SRCROOT)/../CueTest/**",
-				);
-				INFOPLIST_FILE = "CueTableReloaderTests/CueTableReloaderTests-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SDKROOT)/usr/lib/system\"",
-				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Profiling;
-		};
-		9003945916FF9BBA00B4461E /* Testflight Staging */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9003946416FF9BCE00B4461E /* Testflight Staging.xcconfig */;
-			buildSettings = {
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				SDKROOT = iphoneos;
-			};
-			name = "Testflight Staging";
-		};
-		9003945A16FF9BBA00B4461E /* Testflight Staging */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DSTROOT = /tmp/CueTableReloader.dst;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CueTableReloader-Prefix.pch";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-			};
-			name = "Testflight Staging";
-		};
-		9003945B16FF9BBA00B4461E /* Testflight Staging */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CueTableReloader-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"$(inherited)",
-					"UNIT_TESTS=1",
-				);
-				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../CueCore/**",
-					"$(SRCROOT)/../../fmdb/src",
-					"$(SRCROOT)/../../RegexKitLite",
-					"$(SRCROOT)/../../CocoaHTTPServer/**",
-					"$(SRCROOT)/../CueTest/**",
-				);
-				INFOPLIST_FILE = "CueTableReloaderTests/CueTableReloaderTests-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SDKROOT)/usr/lib/system\"",
-				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = "Testflight Staging";
-		};
-		9003945C16FF9BBF00B4461E /* Production */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9003946516FF9BCE00B4461E /* Production.xcconfig */;
-			buildSettings = {
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				SDKROOT = iphoneos;
-			};
-			name = Production;
-		};
-		9003945D16FF9BBF00B4461E /* Production */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DSTROOT = /tmp/CueTableReloader.dst;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CueTableReloader-Prefix.pch";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-			};
-			name = Production;
-		};
-		9003945E16FF9BBF00B4461E /* Production */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CueTableReloader-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"$(inherited)",
-					"UNIT_TESTS=1",
-				);
-				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../CueCore/**",
-					"$(SRCROOT)/../../fmdb/src",
-					"$(SRCROOT)/../../RegexKitLite",
-					"$(SRCROOT)/../../CocoaHTTPServer/**",
-					"$(SRCROOT)/../CueTest/**",
-				);
-				INFOPLIST_FILE = "CueTableReloaderTests/CueTableReloaderTests-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SDKROOT)/usr/lib/system\"",
-				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Production;
-		};
-		900BE44416F6600300686BF9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9003946016FF9BCE00B4461E /* Debug.xcconfig */;
-			buildSettings = {
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
-		900BE44516F6600300686BF9 /* Testflight */ = {
+		90BD5421177F71B900B10239 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9003946316FF9BCE00B4461E /* Testflight.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
 			};
-			name = Testflight;
+			name = Release;
 		};
-		900BE44716F6600300686BF9 /* Debug */ = {
+		90BD5423177F71B900B10239 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DSTROOT = /tmp/CueTableReloader.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CueTableReloader-Prefix.pch";
+				GCC_PREFIX_HEADER = "CueTableReloader/CueTableReloader-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
-		900BE44816F6600300686BF9 /* Testflight */ = {
+		90BD5424177F71B900B10239 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DSTROOT = /tmp/CueTableReloader.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CueTableReloader-Prefix.pch";
+				GCC_PREFIX_HEADER = "CueTableReloader/CueTableReloader-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
-			name = Testflight;
+			name = Release;
 		};
-		900BE44A16F6600300686BF9 /* Debug */ = {
+		90BD5426177F71B900B10239 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
@@ -513,29 +473,14 @@
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CueTableReloader-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"$(inherited)",
-					"UNIT_TESTS=1",
-				);
-				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../CueCore/**",
-					"$(SRCROOT)/../../fmdb/src",
-					"$(SRCROOT)/../../RegexKitLite",
-					"$(SRCROOT)/../../CocoaHTTPServer/**",
-					"$(SRCROOT)/../CueTest/**",
-				);
+				GCC_PREFIX_HEADER = "CueTableReloader/CueTableReloader-Prefix.pch";
 				INFOPLIST_FILE = "CueTableReloaderTests/CueTableReloaderTests-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SDKROOT)/usr/lib/system\"",
-				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
 		};
-		900BE44B16F6600300686BF9 /* Testflight */ = {
+		90BD5427177F71B900B10239 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
@@ -543,68 +488,83 @@
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CueTableReloader-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"$(inherited)",
-					"UNIT_TESTS=1",
-				);
-				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../CueCore/**",
-					"$(SRCROOT)/../../fmdb/src",
-					"$(SRCROOT)/../../RegexKitLite",
-					"$(SRCROOT)/../../CocoaHTTPServer/**",
-					"$(SRCROOT)/../CueTest/**",
-				);
+				GCC_PREFIX_HEADER = "CueTableReloader/CueTableReloader-Prefix.pch";
 				INFOPLIST_FILE = "CueTableReloaderTests/CueTableReloaderTests-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SDKROOT)/usr/lib/system\"",
-				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
 			};
-			name = Testflight;
+			name = Release;
+		};
+		90BD546D177F728E00B10239 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CueTableReloaderDemo/CueTableReloaderDemo-Prefix.pch";
+				INFOPLIST_FILE = "CueTableReloaderDemo/CueTableReloaderDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		90BD546E177F728E00B10239 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CueTableReloaderDemo/CueTableReloaderDemo-Prefix.pch";
+				INFOPLIST_FILE = "CueTableReloaderDemo/CueTableReloaderDemo-Info.plist";
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		900BE41C16F6600300686BF9 /* Build configuration list for PBXProject "CueTableReloader" */ = {
+		90BD53F8177F71B900B10239 /* Build configuration list for PBXProject "CueTableReloader" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				900BE44416F6600300686BF9 /* Debug */,
-				9003944F16FF9BB000B4461E /* Profiling */,
-				900BE44516F6600300686BF9 /* Testflight */,
-				9003945916FF9BBA00B4461E /* Testflight Staging */,
-				9003945C16FF9BBF00B4461E /* Production */,
+				90BD5420177F71B900B10239 /* Debug */,
+				90BD5421177F71B900B10239 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
+			defaultConfigurationName = Release;
 		};
-		900BE44616F6600300686BF9 /* Build configuration list for PBXNativeTarget "CueTableReloader" */ = {
+		90BD5422177F71B900B10239 /* Build configuration list for PBXNativeTarget "CueTableReloader" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				900BE44716F6600300686BF9 /* Debug */,
-				9003945016FF9BB000B4461E /* Profiling */,
-				900BE44816F6600300686BF9 /* Testflight */,
-				9003945A16FF9BBA00B4461E /* Testflight Staging */,
-				9003945D16FF9BBF00B4461E /* Production */,
+				90BD5423177F71B900B10239 /* Debug */,
+				90BD5424177F71B900B10239 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
 		};
-		900BE44916F6600300686BF9 /* Build configuration list for PBXNativeTarget "CueTableReloaderTests" */ = {
+		90BD5425177F71B900B10239 /* Build configuration list for PBXNativeTarget "CueTableReloaderTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				900BE44A16F6600300686BF9 /* Debug */,
-				9003945116FF9BB000B4461E /* Profiling */,
-				900BE44B16F6600300686BF9 /* Testflight */,
-				9003945B16FF9BBA00B4461E /* Testflight Staging */,
-				9003945E16FF9BBF00B4461E /* Production */,
+				90BD5426177F71B900B10239 /* Debug */,
+				90BD5427177F71B900B10239 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
+		};
+		90BD546C177F728E00B10239 /* Build configuration list for PBXNativeTarget "CueTableReloaderDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				90BD546D177F728E00B10239 /* Debug */,
+				90BD546E177F728E00B10239 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 900BE41916F6600300686BF9 /* Project object */;
+	rootObject = 90BD53F5177F71B900B10239 /* Project object */;
 }
