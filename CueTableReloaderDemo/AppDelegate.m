@@ -17,6 +17,7 @@
 #import "AppDelegate.h"
 #import "TableRandomViewController.h"
 #import "TableReorderViewController.h"
+#import "IntroViewController.h"
 
 @implementation AppDelegate
 
@@ -27,8 +28,9 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
-    TableReorderViewController *vc = [[TableReorderViewController alloc] init];
-    self.window.rootViewController = vc;
+    IntroViewController *vc = [[IntroViewController alloc] init];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+    self.window.rootViewController = nav;
     
     return YES;
 }

@@ -14,22 +14,17 @@
  * limitations under the License.
  */
 
-#import <Foundation/Foundation.h>
-#import "CueTableReloader.h"
+#import <UIKit/UIKit.h>
 
 /**
- * Container that specifies a color and height
+ * Pick between demo views
  */
-@interface TestObject : NSObject <CueTableItem>
+@interface IntroViewController : UIViewController
 
-/**
- * Color
- */
-@property (readonly) UIColor *color;
+- (IBAction)randomReplace:(id)sender;
 
-/**
- * Height
- */
-@property (readonly) CGFloat height;
+- (IBAction)basicReorder:(id)sender;
+
+- (IBAction)jazzyRandom:(id)sender;
 
 @end

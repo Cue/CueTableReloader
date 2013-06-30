@@ -10,6 +10,9 @@
 		90729BE9177F995900C51AAF /* TestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 90729BE8177F995900C51AAF /* TestObject.m */; };
 		90729BEC177F99B300C51AAF /* TableReorderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90729BEB177F99B300C51AAF /* TableReorderViewController.m */; };
 		90729BF0177F9A2E00C51AAF /* TableRandomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90729BEF177F9A2E00C51AAF /* TableRandomViewController.m */; };
+		90729C12177FB77A00C51AAF /* IntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90729C10177FB77A00C51AAF /* IntroViewController.m */; };
+		90729C13177FB77A00C51AAF /* IntroViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90729C11177FB77A00C51AAF /* IntroViewController.xib */; };
+		90729C16177FB7D500C51AAF /* TableFullRandomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90729C15177FB7D500C51AAF /* TableFullRandomViewController.m */; };
 		90BD5401177F71B900B10239 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90BD5400177F71B900B10239 /* Foundation.framework */; };
 		90BD5406177F71B900B10239 /* CueTableReloader.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 90BD5405177F71B900B10239 /* CueTableReloader.h */; };
 		90BD5408177F71B900B10239 /* CueTableReloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BD5407177F71B900B10239 /* CueTableReloader.m */; };
@@ -62,6 +65,11 @@
 		90729BEB177F99B300C51AAF /* TableReorderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableReorderViewController.m; sourceTree = "<group>"; };
 		90729BEE177F9A2E00C51AAF /* TableRandomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableRandomViewController.h; sourceTree = "<group>"; };
 		90729BEF177F9A2E00C51AAF /* TableRandomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableRandomViewController.m; sourceTree = "<group>"; };
+		90729C0F177FB77A00C51AAF /* IntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroViewController.h; sourceTree = "<group>"; };
+		90729C10177FB77A00C51AAF /* IntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroViewController.m; sourceTree = "<group>"; };
+		90729C11177FB77A00C51AAF /* IntroViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IntroViewController.xib; sourceTree = "<group>"; };
+		90729C14177FB7D500C51AAF /* TableFullRandomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableFullRandomViewController.h; sourceTree = "<group>"; };
+		90729C15177FB7D500C51AAF /* TableFullRandomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableFullRandomViewController.m; sourceTree = "<group>"; };
 		90BD53FD177F71B900B10239 /* libCueTableReloader.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCueTableReloader.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		90BD5400177F71B900B10239 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		90BD5404177F71B900B10239 /* CueTableReloader-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CueTableReloader-Prefix.pch"; sourceTree = "<group>"; };
@@ -132,6 +140,8 @@
 				90729BEB177F99B300C51AAF /* TableReorderViewController.m */,
 				90729BEE177F9A2E00C51AAF /* TableRandomViewController.h */,
 				90729BEF177F9A2E00C51AAF /* TableRandomViewController.m */,
+				90729C14177FB7D500C51AAF /* TableFullRandomViewController.h */,
+				90729C15177FB7D500C51AAF /* TableFullRandomViewController.m */,
 			);
 			name = DemoVCs;
 			sourceTree = "<group>";
@@ -140,8 +150,8 @@
 			isa = PBXGroup;
 			children = (
 				90BD5402177F71B900B10239 /* CueTableReloader */,
-				90BD5417177F71B900B10239 /* CueTableReloaderTests */,
 				90BD545A177F728D00B10239 /* CueTableReloaderDemo */,
+				90BD5417177F71B900B10239 /* CueTableReloaderTests */,
 				90BD545B177F728D00B10239 /* Supporting Files */,
 				90BD53FF177F71B900B10239 /* Frameworks */,
 				90BD53FE177F71B900B10239 /* Products */,
@@ -214,6 +224,9 @@
 				90BD5464177F728D00B10239 /* AppDelegate.m */,
 				90729BE7177F995900C51AAF /* TestObject.h */,
 				90729BE8177F995900C51AAF /* TestObject.m */,
+				90729C0F177FB77A00C51AAF /* IntroViewController.h */,
+				90729C10177FB77A00C51AAF /* IntroViewController.m */,
+				90729C11177FB77A00C51AAF /* IntroViewController.xib */,
 			);
 			path = CueTableReloaderDemo;
 			sourceTree = "<group>";
@@ -334,6 +347,7 @@
 				90BD5467177F728E00B10239 /* Default.png in Resources */,
 				90BD5469177F728E00B10239 /* Default@2x.png in Resources */,
 				90BD546B177F728E00B10239 /* Default-568h@2x.png in Resources */,
+				90729C13177FB77A00C51AAF /* IntroViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,6 +396,8 @@
 				90729BE9177F995900C51AAF /* TestObject.m in Sources */,
 				90729BEC177F99B300C51AAF /* TableReorderViewController.m in Sources */,
 				90729BF0177F9A2E00C51AAF /* TableRandomViewController.m in Sources */,
+				90729C12177FB77A00C51AAF /* IntroViewController.m in Sources */,
+				90729C16177FB7D500C51AAF /* TableFullRandomViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -134,9 +134,8 @@
                             insertionIndex++;
                             continue;
                         } else {
-                            NSNumber *mappedOldIndex = oldIndexes[oldItem.tableItemKey];
-                            if (mappedOldIndex) { // Move
-                                int iOld = mappedOldIndex.intValue;
+                            if (oldIndexes[newItem.tableItemKey]) { // Move
+                                int iOld = [oldIndexes[oldItem.tableItemKey] intValue];
                                 int iNew = [newIndexes[oldItem.tableItemKey] intValue];                                
                                 NSInteger diff = iNew - iOld;
                                 NSIndexPath *from = [NSIndexPath indexPathForRow:oldIndex inSection:i];
