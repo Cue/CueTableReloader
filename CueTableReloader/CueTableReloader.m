@@ -33,9 +33,9 @@
         _reloadUnchangedRows = YES;
         _animateClear = NO;
         _animatePopulate = NO;
-        _insertAnimation = UITableViewRowAnimationLeft;
-        _deleteAnimation = UITableViewRowAnimationRight;
-        _updateAnimation = UITableViewRowAnimationFade;
+        _insertAnimation = UITableViewRowAnimationRight;
+        _deleteAnimation = UITableViewRowAnimationLeft;
+        _updateAnimation = UITableViewRowAnimationNone;
     }
     return self;
 }
@@ -99,10 +99,10 @@
                 oldIndexes[item.tableItemKey] = @(i);
             }
             
-            NSMutableArray *deletions = [@[] mutableCopy];
-            NSMutableArray *insertions = [@[] mutableCopy];
-            NSMutableArray *reloads = [@[] mutableCopy];
-            NSMutableArray *moves = [@[] mutableCopy];
+            NSMutableSet *deletions = [NSMutableSet set];
+            NSMutableSet *insertions = [NSMutableSet set];
+            NSMutableSet *reloads = [NSMutableSet set];
+            NSMutableSet *moves = [NSMutableSet set];
             int oldIndex = 0;
             int newIndex = 0;
             int insertionIndex = 0;
@@ -164,19 +164,45 @@
                     }
                 }
                 
+                NSMutableSet *updatedReloads = [NSMutableSet set];
+                
+                // Find intersecting index paths in deletions
+                for (id obj in deletions) {
+                    if ([insertions containsObject: obj]) {
+                        [updatedReloads addObject: obj];
+                    }
+                }
+                
+                // Find intersecting index paths in insertions
+                for (id obj in insertions) {
+                    if ([deletions containsObject: obj]) {
+                        [updatedReloads addObject: obj];
+                    }
+                }
+                
+                NSMutableSet *deletionsCopy = [deletions mutableCopy];
+                NSMutableSet *insertionsCopy = [insertions mutableCopy];
+                [deletions minusSet: insertionsCopy];
+                [insertions minusSet: deletionsCopy];
+                deletionsCopy = nil;
+                insertionsCopy = nil;
+                
                 [_tableView beginUpdates];
-                [_tableView deleteRowsAtIndexPaths:deletions
+                [_tableView deleteRowsAtIndexPaths:[deletions allObjects]
                                   withRowAnimation:_deleteAnimation];
-                [_tableView insertRowsAtIndexPaths:insertions
+                [_tableView insertRowsAtIndexPaths:[insertions allObjects]
                                   withRowAnimation:_insertAnimation];
                 for (NSArray *pair in moves) {
                     [_tableView moveRowAtIndexPath:pair[0] toIndexPath:pair[1]];
                 }
                 [_tableView endUpdates];
                 if (_reloadUnchangedRows) {
-                    [_tableView reloadRowsAtIndexPaths:reloads
+                    [_tableView reloadRowsAtIndexPaths:[reloads allObjects]
                                       withRowAnimation:_updateAnimation];
                 }
+                
+                // Reload updated index paths based on intersecting index paths above (if applicable)
+                [_tableView reloadRowsAtIndexPaths:[updatedReloads allObjects] withRowAnimation: _updateAnimation];
             } @catch (NSException *e) {
                 [_tableView reloadData];
             }
