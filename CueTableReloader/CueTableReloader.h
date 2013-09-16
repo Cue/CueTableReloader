@@ -58,13 +58,13 @@
 @property (nonatomic, assign) BOOL animatePopulate;
 
 /**
- * Default: UITableViewRowAnimationRight
+ * Default: UITableViewRowAnimationLeft
  * Animation for a table row insert.
  */
 @property (nonatomic, assign) UITableViewRowAnimation insertAnimation;
 
 /**
- * Default: UITableViewRowAnimationLeft
+ * Default: UITableViewRowAnimationRight
  * Animation for a table row delete.
  */
 @property (nonatomic, assign) UITableViewRowAnimation deleteAnimation;

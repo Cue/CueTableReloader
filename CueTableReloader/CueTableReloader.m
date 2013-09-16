@@ -33,8 +33,8 @@
         _reloadUnchangedRows = YES;
         _animateClear = NO;
         _animatePopulate = NO;
-        _insertAnimation = UITableViewRowAnimationRight;
-        _deleteAnimation = UITableViewRowAnimationLeft;
+        _insertAnimation = UITableViewRowAnimationLeft;
+        _deleteAnimation = UITableViewRowAnimationRight;
         _updateAnimation = UITableViewRowAnimationNone;
     }
     return self;
