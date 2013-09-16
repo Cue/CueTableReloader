@@ -16,19 +16,26 @@
 
 #import "CueTableReloader.h"
 
-@implementation CueTableReloader {
+@interface CueTableReloader () {
     UITableView *_tableView;
     NSArray *_oldSections;
 }
 
-- (id)initWithTableView:(UITableView *)tableView;
-{
+@end
+
+@implementation CueTableReloader
+
+- (id)initWithTableView:(UITableView *)tableView {
     self = [super init];
+    
     if (self) {
         _tableView = tableView;
         _reloadUnchangedRows = YES;
         _animateClear = NO;
         _animatePopulate = NO;
+        _insertAnimation = UITableViewRowAnimationLeft;
+        _deleteAnimation = UITableViewRowAnimationRight;
+        _updateAnimation = UITableViewRowAnimationNone;
     }
     return self;
 }
@@ -53,7 +60,7 @@
     
     if (!shouldAnimate) {
         [_tableView reloadData];
-    } else {        
+    } else {
         // Apply a simple algorithm to each section.
         // It's very good at handling new and deleted rows, not so much with reorderings.
         // It will not catch cross-section moves, and doesn't handle section count changes well.
@@ -65,10 +72,10 @@
                 newSection = sections[i];
             } else {
                 [_tableView deleteSections:[NSIndexSet indexSetWithIndex:i]
-                          withRowAnimation:UITableViewRowAnimationNone];
+                          withRowAnimation: _deleteAnimation];
                 if (i == 0) {
                     [_tableView insertSections:[NSIndexSet indexSetWithIndex:0]
-                              withRowAnimation:UITableViewRowAnimationNone];
+                              withRowAnimation:_insertAnimation];
                 }
                 continue;
             }
@@ -77,11 +84,11 @@
                 oldSection = _oldSections[i];
             } else if (i > 0) {
                 [_tableView insertSections:[NSIndexSet indexSetWithIndex:i]
-                          withRowAnimation:UITableViewRowAnimationFade];
+                          withRowAnimation:_insertAnimation];
             }
             
             NSMutableDictionary *newIndexes = [NSMutableDictionary dictionaryWithCapacity:newSection.count];
-            for (int i = 0; i < oldSection.count; ++i) {
+            for (int i = 0; i < newSection.count; ++i) {
                 NSObject<CueTableItem> *item = newSection[i];
                 newIndexes[item.tableItemKey] = @(i);
             }
@@ -91,11 +98,11 @@
                 NSObject<CueTableItem> *item = oldSection[i];
                 oldIndexes[item.tableItemKey] = @(i);
             }
-                        
-            NSMutableArray *deletions = [@[] mutableCopy];
-            NSMutableArray *insertions = [@[] mutableCopy];
-            NSMutableArray *reloads = [@[] mutableCopy];
-            NSMutableArray *moves = [@[] mutableCopy];
+            
+            NSMutableSet *deletions = [NSMutableSet set];
+            NSMutableSet *insertions = [NSMutableSet set];
+            NSMutableSet *reloads = [NSMutableSet set];
+            NSMutableSet *moves = [NSMutableSet set];
             int oldIndex = 0;
             int newIndex = 0;
             int insertionIndex = 0;
@@ -108,7 +115,7 @@
                     NSIndexPath *insertPath = [NSIndexPath indexPathForRow:insertionIndex inSection:i];
                     NSIndexPath *deletePath = [NSIndexPath indexPathForRow:oldIndex inSection:i];
                     NSIndexPath *reloadPath = [NSIndexPath indexPathForRow:insertionIndex inSection:i];
-                                        
+                    
                     NSObject<CueTableItem> *oldItem = nil;
                     if (oldIndex < oldSection.count) { // Delete
                         oldItem = oldSection[oldIndex];
@@ -135,8 +142,8 @@
                             continue;
                         } else {
                             if (oldIndexes[newItem.tableItemKey]) { // Move
-                                int iOld = [oldIndexes[oldItem.tableItemKey] intValue];
-                                int iNew = [newIndexes[oldItem.tableItemKey] intValue];                                
+                                NSInteger iOld = [oldIndexes[oldItem.tableItemKey] integerValue];
+                                NSInteger iNew = [newIndexes[oldItem.tableItemKey] integerValue];
                                 NSInteger diff = iNew - iOld;
                                 NSIndexPath *from = [NSIndexPath indexPathForRow:oldIndex inSection:i];
                                 NSIndexPath *to = [NSIndexPath indexPathForRow:oldIndex+diff inSection:i];
@@ -156,19 +163,46 @@
                          "and that the ordering is constant!"];
                     }
                 }
+                
+                NSMutableSet *updatedReloads = [NSMutableSet set];
+                
+                // Find intersecting index paths in deletions
+                for (id obj in deletions) {
+                    if ([insertions containsObject: obj]) {
+                        [updatedReloads addObject: obj];
+                    }
+                }
+                
+                // Find intersecting index paths in insertions
+                for (id obj in insertions) {
+                    if ([deletions containsObject: obj]) {
+                        [updatedReloads addObject: obj];
+                    }
+                }
+                
+                NSMutableSet *deletionsCopy = [deletions mutableCopy];
+                NSMutableSet *insertionsCopy = [insertions mutableCopy];
+                [deletions minusSet: insertionsCopy];
+                [insertions minusSet: deletionsCopy];
+                deletionsCopy = nil;
+                insertionsCopy = nil;
+                
                 [_tableView beginUpdates];
-                [_tableView deleteRowsAtIndexPaths:deletions
-                                  withRowAnimation:UITableViewRowAnimationNone];
-                [_tableView insertRowsAtIndexPaths:insertions
-                                  withRowAnimation:UITableViewRowAnimationFade];
+                [_tableView deleteRowsAtIndexPaths:[deletions allObjects]
+                                  withRowAnimation:_deleteAnimation];
+                [_tableView insertRowsAtIndexPaths:[insertions allObjects]
+                                  withRowAnimation:_insertAnimation];
                 for (NSArray *pair in moves) {
                     [_tableView moveRowAtIndexPath:pair[0] toIndexPath:pair[1]];
                 }
                 [_tableView endUpdates];
                 if (_reloadUnchangedRows) {
-                    [_tableView reloadRowsAtIndexPaths:reloads
-                                      withRowAnimation:UITableViewRowAnimationNone];
+                    [_tableView reloadRowsAtIndexPaths:[reloads allObjects]
+                                      withRowAnimation:_updateAnimation];
                 }
+                
+                // Reload updated index paths based on intersecting index paths above (if applicable)
+                [_tableView reloadRowsAtIndexPaths:[updatedReloads allObjects] withRowAnimation: _updateAnimation];
             } @catch (NSException *e) {
                 [_tableView reloadData];
             }
