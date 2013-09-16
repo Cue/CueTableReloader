@@ -1,3 +1,4 @@
+
 /*
  * Copyright 2013 CueTableReloader Authors.
  *
@@ -22,7 +23,6 @@
  */
 @interface CueTableReloader : NSObject
 
-
 /**
  * Preferred method of initialization.
  */
@@ -43,20 +43,37 @@
  * Default: YES
  * If you know that pre-existing rows aren't subject to change, set this to NO and skip reloading them.
  */
-@property BOOL reloadUnchangedRows;
+@property (nonatomic, assign) BOOL reloadUnchangedRows;
 
 /**
  * Default: NO
  * By default, setting an empty array will not animate.
  */
-@property BOOL animateClear;
+@property (nonatomic, assign) BOOL animateClear;
 
 /**
  * Default: NO
  * By default, setting data for the first time will not animate.
  */
-@property BOOL animatePopulate;
+@property (nonatomic, assign) BOOL animatePopulate;
 
+/**
+ * Default: UITableViewRowAnimationLeft
+ * Animation for a table row insert.
+ */
+@property (nonatomic, assign) UITableViewRowAnimation insertAnimation;
+
+/**
+ * Default: UITableViewRowAnimationRight
+ * Animation for a table row delete.
+ */
+@property (nonatomic, assign) UITableViewRowAnimation deleteAnimation;
+
+/**
+ * Default: UITableViewRowAnimationFade
+ * Animation for a table row update.
+ */
+@property (nonatomic, assign) UITableViewRowAnimation updateAnimation;
 
 @end
 
